@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex rollback",
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent"
   },
   "repository": {
@@ -15,5 +19,10 @@
     "eslint": "8.4.1",
     "jest": "27.4.3",
     "supertest": "6.1.6"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "knex": "^0.95.15",
+    "sqlite3": "^5.0.2"
   }
 }
