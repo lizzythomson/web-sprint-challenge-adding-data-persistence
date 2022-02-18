@@ -4,7 +4,7 @@ exports.up = function (knex) {
       tbl.increments('project_id');
       tbl.string('project_name', 128).notNullable();
       tbl.string('project_description');
-      tbl.boolean('project_completed');
+      tbl.boolean('project_completed').defaultTo(0);
     })
     .createTable('resources', (tbl) => {
       tbl.increments('resource_id');
@@ -36,7 +36,7 @@ exports.up = function (knex) {
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
       tbl
-        .integer('project_id')
+        .integer('resource_id')
         .unsigned()
         .notNullable()
         .references('resource_id')
