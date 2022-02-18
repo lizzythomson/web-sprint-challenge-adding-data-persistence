@@ -1,11 +1,7 @@
 // build your `Project` model here
 const db = require('../../data/dbConfig');
+const convertIntToBool = require('../convertIntToBool');
 
-function convertIntToBool(obj, propertyName) {
-  if (obj) {
-    obj[propertyName] = obj[propertyName] !== 0;
-  }
-}
 async function findProjects() {
   const results = await db('projects');
 

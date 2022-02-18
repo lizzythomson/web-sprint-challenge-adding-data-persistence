@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   resourceModel
-    .create(req.body)
+    .createResource(req.body)
     .then((resource) => {
       res.status(201).json(resource);
     })

@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
   taskModel
-    .findTask()
+    .findTasks()
     .then((tasks) => {
       res.json(tasks);
     })
@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   taskModel
-    .create(req.body)
+    .createTask(req.body)
     .then((task) => {
       res.status(201).json(task);
     })
